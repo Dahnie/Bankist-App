@@ -1,0 +1,184 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./Images/logo.png"
+      style="background-color: azure"
+    />
+    <title>Bankist App</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-child logo-div">
+        <img src="./Images/logo.png" alt="logo" />
+        <p id="company-name"><span id="B">B</span>ankist</p>
+      </div>
+      <div class="header-child intro-tag">
+        <p id="intro-statement">Log in to get started</p>
+      </div>
+      <div class="header-child login-div">
+        <span class="login">
+          <input type="text" id="username" placeholder="user" />
+          <input
+            id="user-pin"
+            type="password"
+            maxlength="4"
+            name="password"
+            placeholder="PIN"
+          />
+        </span>
+      </div>
+      <button id="submit-login">➡</button>
+    </div>
+
+    <!-- MAIN -->
+    <main class="app">
+      <div class="balance-arc">
+        <div class="balance-label-arc">
+          <p class="balance-label">Current balance</p>
+          <p class="balance-date">As of <span class="date">05/12/2075</span></p>
+        </div>
+        <div class="balace-value">
+          <p class="balance-price">0 000 &euro;</p>
+        </div>
+      </div>
+      <div class="transaction-arc">
+        <div class="transaction-history-arc">
+          <div class="movements-row">
+            <div class="movements-type movements-type--deposit">2 deposit</div>
+            <div class="movements-date">3 days ago</div>
+            <div class="movements-value">4 000 &euro;</div>
+          </div>
+          <hr />
+          <div class="movements-row">
+            <div class="movements-type movements-type--withdrawal">
+              2 withdrawal
+            </div>
+            <div class="movements-date">3 days ago</div>
+            <div class="movements-value">4 000 &euro;</div>
+          </div>
+          <hr />
+          <div class="movements-row">
+            <div class="movements-type movements-type--deposit">2 deposit</div>
+            <div class="movements-date">3 days ago</div>
+            <div class="movements-value">4 000 &euro;</div>
+          </div>
+          <hr />
+
+          <!-- <div class="movements-row">
+                    <div class="movements-type movements-type--deposit">2 deposit</div>
+                    <div class="movements-date">3 days ago</div>
+                    <div class="movements-value">4 000 &euro;</div>
+                </div><hr>
+                <div class="movements-row">
+                    <div class="movements-type movements-type--deposit">2 deposit</div>
+                    <div class="movements-date">3 days ago</div>
+                    <div class="movements-value">4 000 &euro;</div>
+                </div><hr>
+                <div class="movements-row">
+                    <div class="movements-type movements-type--deposit">2 deposit</div>
+                    <div class="movements-date">3 days ago</div>
+                    <div class="movements-value">4 000 &euro;</div>
+                </div><hr>
+                <div class="movements-row">
+                    <div class="movements-type movements-type--deposit">2 deposit</div>
+                    <div class="movements-date">3 days ago</div>
+                    <div class="movements-value">4 000 &euro;</div>
+                </div><hr>
+                <div class="movements-row">
+                    <div class="movements-type movements-type--deposit">2 deposit</div>
+                    <div class="movements-date">3 days ago</div>
+                    <div class="movements-value">4 000 &euro;</div>
+                </div><hr> -->
+        </div>
+
+        <div class="transaction-performing-arc">
+          <!-- TRANSFER -->
+          <div class="perform-transaction transfer-money">
+            <p>Transfer Money</p>
+            <div class="transfer-input">
+              <div class="transfer-username-arc">
+                <input type="text" name="name" id="transfer-to-username" />
+                <p>Transfer to</p>
+              </div>
+              <div class="transfer-amount-arc">
+                <input type="number" name="amount" id="transfer-amount" />
+                <p>Amount</p>
+              </div>
+              <div class="submit-transfer-arc">
+                <button id="submit-transfer">➡</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOAN -->
+          <div class="perform-transaction request-loan">
+            <p>Request Loan</p>
+            <div class="loan-arc">
+              <div class="loan-amount-arc">
+                <input type="number" name="amount" id="loan-amount" />
+                <p>Amount</p>
+              </div>
+              <div class="submit-loan-arc">
+                <button id="submit-loan">➡</button>
+              </div>
+            </div>
+          </div>
+          <!-- CLOSE ACCOUNT -->
+          <div class="perform-transaction close-account">
+            <p>Close Account</p>
+            <div class="close-account-arc">
+              <div class="close-account-username-arc">
+                <input
+                  type="text"
+                  name="username"
+                  id="close-account-username"
+                />
+                <p>Confirm user</p>
+              </div>
+              <div class="close-account-pin-arc">
+                <input
+                  type="password"
+                  name="name"
+                  id="close-account-pin"
+                  maxlength="4"
+                />
+                <p>Confirm Pin</p>
+              </div>
+              <div class="confirm-submit-arc">
+                <button id="submit-credentials">➡</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-arc">
+        <div class="summary">
+          <span class="down-balance"
+            >IN:<span id="in-balance">0000&euro;</span></span
+          >
+          <span class="down-balance"
+            >OUT:<span id="out-balance">0000&euro;</span></span
+          >
+          <span class="down-balance"
+            >INTEREST:<span id="interest-balance"
+              >0000<span>&euro;</span></span
+            ></span
+          >
+          <button class="sort"><span class="img">↕</span> SORT</button>
+        </div>
+        <div class="timer">You will be logged out in 02:45</div>
+        <button id="logout-btn">Logout</button>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

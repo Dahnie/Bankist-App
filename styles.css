@@ -1,0 +1,443 @@
+@font-face {
+  font-family: Arimo;
+  src: url("./Arimo/Arimo/static/Arimo-MediumItalic.ttf");
+  font-family: Fuggles;
+  src: url("./Arimo/Fuggles/Fuggles-Regular.ttf");
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url("./Arimo/Comfortaa/static/Comfortaa-Regular.ttf");
+}
+
+:root {
+  --deposit: linear-gradient(to top left, #3e9e79, #98ec4d);
+  --withdrawal: linear-gradient(to top left, #e00038, #ff585f);
+}
+body {
+  max-width: 100vw !important;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Arimo";
+  justify-content: center;
+  color: #444444;
+}
+
+/* .header-child {
+} */
+
+.intro-tag {
+  display: flex;
+  margin-left: 20px;
+  flex: 100%;
+  justify-content: center;
+}
+
+.logo-div {
+  display: flex;
+  margin-left: 20px;
+  flex: 100%;
+  justify-content: center;
+}
+
+.logo-div img {
+  width: 30px;
+  height: 30px;
+  margin-top: 38px;
+  margin-right: 6px;
+}
+
+#B {
+  color: rgb(78, 60, 194);
+  font-family: Fuggles;
+  font-size: 60px;
+  font-weight: 600;
+}
+/* 
+.logo-div #company-name {
+} */
+
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.login > input {
+  border: none;
+  box-shadow: inset 2px 2px 6px #cbced1, inset -2px -2px 4px white;
+  border-radius: 50px;
+  margin-left: 15px;
+  margin-top: 25px;
+  outline: none;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  padding-left: 15px;
+  color: #504f4f;
+  /* margin-right: 50px; */
+}
+
+input::placeholder {
+  font-size: 14px;
+  padding-left: 6px;
+}
+
+input::placeholder:focus {
+  color: red;
+}
+
+#submit-login {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: fit-content;
+  margin-left: 10px;
+  top: 40;
+  outline: none;
+  box-shadow: rgb(107, 106, 106) 0px 1.5px 2px;
+}
+
+#submit-login:active {
+  transform: scaleX(1.1);
+}
+@media (max-width: 475px) {
+  .login-div {
+    justify-content: center;
+  }
+
+  #submit-login {
+    text-align: center;
+    padding: 0 30px;
+    top: 8;
+    /* margin-top: 0px; */
+  }
+}
+
+/* MAIN ARC */
+.app {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s;
+  color: black;
+}
+
+.balance-arc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin: 20px; */
+  width: 100%;
+  text-align: center;
+}
+
+.balance-label-arc {
+  font-family: Comfortaa;
+}
+
+.balance-label {
+  font-size: 24px;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.balance-price {
+  margin-left: 350px;
+  margin-top: 28px;
+  font-family: Comfortaa;
+  font-size: 42px;
+}
+
+@media (max-width: 761px) {
+  .balance-price {
+    margin-top: 32px;
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 587px) {
+  .balance-price {
+    margin-left: 0;
+  }
+}
+
+/* TRANSACTION ARC */
+.transaction-arc {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* width: 90%; */
+  margin-top: 20px;
+  /* margin: 30px; */
+}
+
+.transaction-history-arc {
+  width: 600px;
+  overflow: auto;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+.transaction-performing-arc {
+  margin-left: 80px;
+  padding: 0 5%;
+}
+
+@media (max-width: 1040px) {
+  .transaction-performing-arc {
+    width: 50%;
+    max-width: 50%;
+    margin: 0;
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 425px) {
+  .transaction-performing-arc {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2vw;
+  }
+}
+
+.transaction-history-arc > .movements-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Comfortaa;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* .movements-row > .movements-date {
+  margin-right: 250px;
+} */
+
+.movements-row > .movements-type--deposit {
+  background: var(--deposit);
+}
+
+.movements-row > .movements-type {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: rgb(107, 106, 106) 0.5px 0.5px 6px;
+}
+.movements-row > .movements-type--withdrawal {
+  background: var(--withdrawal);
+}
+/* Perform Transactions */
+.perform-transaction {
+  box-shadow: rgb(107, 106, 106) 1.5px 1.5px 10px;
+  max-width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: blue;
+  margin-top: 50px;
+  border-radius: 10px;
+  font-family: Comfortaa;
+  font-weight: 500;
+  margin-left: 0;
+}
+
+.perform-transaction input {
+  width: 100px;
+  padding: 10px;
+  margin: 15px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+
+.perform-transaction button {
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 14px;
+  font-size: 16px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.perform-transaction input:focus {
+  outline: none;
+}
+
+/* Transfer */
+.transfer-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.transfer-money {
+  background-image: linear-gradient(to top left, #da9604, #f7d038);
+}
+
+.transfer-username-arc,
+.transfer-amount-arc,
+.loan-amount-arc,
+.close-account-username-arc,
+.close-account-pin-arc {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Loan and Close Account*/
+.loan-arc,
+.close-account-arc {
+  display: flex;
+  justify-content: center;
+}
+
+.request-loan {
+  background-image: linear-gradient(to top left, #3e9e79, #98ec4d);
+}
+
+.close-account {
+  background-image: linear-gradient(to top left, #e00038, #ff585f);
+}
+
+.summary-arc {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Comfortaa;
+  padding: 14px;
+}
+
+.down-balance {
+  margin-left: 80px;
+  font-size: 18px;
+}
+
+#in-balance,
+#out-balance,
+#interest-balance {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#in-balance {
+  color: #14885d;
+}
+#out-balance {
+  color: #b13453;
+}
+#interest-balance {
+  color: #14885d;
+}
+
+.sort {
+  display: none;
+  margin-left: 40px;
+  margin-top: 0;
+  padding: 8px;
+  font-family: Arimo;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button > .img {
+  font-size: 22px;
+}
+
+.timer {
+  font-size: 18px;
+  margin-left: 180px;
+  margin-right: 15px;
+  margin-top: 8px;
+}
+
+@media (max-width: 1318px) {
+  .down-balance {
+    margin-left: 140px;
+  }
+
+  .timer {
+    margin-left: 0;
+    margin-top: 30px;
+    display: flex;
+    flex: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 1040px) {
+  .summary-arc {
+    padding: 3% 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .down-balance {
+    margin-left: 100px;
+  }
+
+  /* TODO Work on creating a new sort button under the hisstory arc for mobile(display-none) */
+  .sort {
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .summary-arc {
+    justify-content: center;
+    padding: 2%;
+  }
+}
+.w-20 {
+  width: 20% !important;
+}
+.w-60 {
+  width: 60% !important;
+}
+
+#logout-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgb(153, 132, 132) 6px 3px 10px;
+  font-family: Comfortaa;
+}
+
+#logout-btn:hover {
+  background-color: #d8d4d4;
+  color: black;
+}
+
+#logout-btn:active {
+  transform: scaleX(1.05);
+}
+
+@media (min-width: 1366px) {
+  #logout-btn {
+    display: inline;
+    margin-top: 0;
+  }
+}
